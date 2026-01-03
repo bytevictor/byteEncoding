@@ -1,0 +1,22 @@
+# Rutas del sistema
+paths:
+  input: "" # Ruta donde leer los archivos
+  output: "byte_encoded" # Ruta donde guardar los archivos
+  temp: "temp" # Ruta donde guardar archivos temporales
+# Configuración de codificación
+encoding:
+  v_codec: "libx265" # Codigo del video
+  crf: 20
+  preset: "slow"
+  tune: "animation"
+  pix_fmt: "yuv420p10le"
+  video_tag: "HEVC"
+
+# Naming y Etiquetas
+naming:
+  prefix: "[byte]" # Prefijo para los archivos
+
+# Prioridad de idiomas (Filtros)
+filters:
+  audio_langs: ["jpn", "spa", "eng"] # Idiomas de audio
+  subtitle_langs: ["jpn", "spa", "eng", "und"] # Idiomas de subtitulos

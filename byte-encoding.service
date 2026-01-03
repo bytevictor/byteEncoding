@@ -1,0 +1,15 @@
+[Unit]
+Description=Byte Video Encoding Service
+After=network.target
+
+[Service]
+Type=simple
+User=byte
+Group=byte
+WorkingDirectory=/home/byte/byteEncoding
+ExecStart=/usr/bin/python3 /home/byte/byteEncoding/byte_encode.py
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
