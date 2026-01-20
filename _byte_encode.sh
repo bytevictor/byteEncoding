@@ -8,8 +8,8 @@
 FFMPEG_ARGS="-map 0 -c:v hevc_nvenc -preset slow -rc constqp -qp 32 -spatial_aq 1 -c:a aac -b:a 128k -ac 2 -c:s copy"
 
 # Nombres para el etiquetado
-NEW_V_CODEC="hevc"
-NEW_A_CODEC="aac"
+NEW_V_CODEC="HEVC"
+NEW_A_CODEC="AAC"
 
 # ==============================================================================
 #  LÓGICA
@@ -61,8 +61,8 @@ find . -type f \( -name "*.mkv" -o -name "*.mp4" -o -name "*.avi" \) -not -path 
 
     # 4. Construir Nuevo Nombre
     # Formato: [byte] [CODECS] [SUBS] NombreOriginal.ext
-    TAG_INFO="[${NEW_V_CODEC} - ${NEW_A_CODEC} (from ${OLD_V_CODEC} - ${OLD_A_CODEC})]"
-    NEW_FILENAME="[byte] ${TAG_INFO}${SUBS_STRING} ${NAME_NO_EXT}.${EXTENSION}"
+    TAG_INFO="[${NEW_V_CODEC} - ${NEW_A_CODEC}]"
+    NEW_FILENAME="[byte] ${TAG_INFO} ${NAME_NO_EXT}${SUBS_STRING}.${EXTENSION}"
     
     OUTPUT_FILE="./$NEW_DIR_PATH/$NEW_FILENAME"
 
