@@ -101,7 +101,7 @@ for ORIGINAL in "${ALL_FILES[@]}"; do
 
     # FIX: -iname en la búsqueda del hermano también
     HERMANO=$(find "$DIR_NAME" -maxdepth 1 \
-        -iname "${NAME_NO_EXT}*.byte.${EXTENSION}" 2>/dev/null | head -n 1)
+        -iname "${NAME_NO_EXT}*.byte.*" 2>/dev/null | head -n 1)
 
     if [ -n "$HERMANO" ] && [ -f "$HERMANO" ]; then
         ((FILES_RECODIFIED++))
